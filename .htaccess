@@ -1,0 +1,14 @@
+RewriteEngine on
+RewriteCond %{HTTP_HOST} ^tutorialpaths\.dynodel\.com$ [OR]
+RewriteCond %{HTTP_HOST} ^www\.tutorialpaths\.dynodel\.com$
+RewriteCond %{REQUEST_URI} !^/\.well-known/acme-challenge/.+$
+RewriteCond %{REQUEST_URI} !^/\.well-known/cpanel-dcv/[0-9a-zA-Z_-]+$
+RewriteCond %{REQUEST_URI} !^/\.well-known/pki-validation/(?:\ Ballot169)?
+RewriteCond %{REQUEST_URI} !^/\.well-known/pki-validation/[A-F0-9]{32}\.txt(?:\ Comodo\ DCV)?$
+RewriteRule ^/?$ "https\:\/\/tutorialpaths\.com" [R=301,L]
+
+# DO NOT REMOVE. CLOUDLINUX PASSENGER CONFIGURATION BEGIN
+PassengerAppRoot "/home/dynodelc/tutorialpaths.com"
+PassengerBaseURI "/"
+PassengerPython "/home/dynodelc/virtualenv/tutorialpaths.com/3.6/bin/python3.6"
+# DO NOT REMOVE. CLOUDLINUX PASSENGER CONFIGURATION END
