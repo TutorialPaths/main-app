@@ -73,7 +73,7 @@ def process(html, variables):
 
                                 html = beforecontent + nav.replace('<!--$[_CONTENT]$-->', content) + aftercontent
 
-                                html = html.replace("@nav auto:nav auto,", "")
+                                html = html.replace("@nav auto:nav_static auto,", "")
 
                                 return process(html, variables)
 
