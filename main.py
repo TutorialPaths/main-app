@@ -148,7 +148,7 @@ def tagredir(tag):
 def staticpage(page):
     page_fl = loadDOMAbs('/st/' + page + '.md')
     if page_fl:
-        md = markdown2.markdown(page_fl)
+        md = markdown2.markdown(page_fl).replace('\n', '')
         html = loadDOM("/static")
         if html:
             return html_processor.process(html, {
