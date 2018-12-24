@@ -54,13 +54,13 @@ def process(html, variables):
                             if childtype == 'auto':
                                 if childlocation == 'auto:nav':
 
-                                    nav = urlopen("https://dom.tutorialpaths.com/nav_static/_index.html").read().decode()
+                                    nav = urlopen("https://dom.tutorialpaths.com/nav/_index.html").read().decode()
 
                                     html.replace("</head>", "<link rel='stylesheet' href='https://dom.tutorialpaths.com/nav/bundle.css'></head>")
 
                                 elif childlocation == 'auto:nav_static':
 
-                                    nav = urlopen("https://dom.tutorialpaths.com/nav/_index.html").read().decode()
+                                    nav = urlopen("https://dom.tutorialpaths.com/nav_static/_index.html").read().decode()
 
                                     html.replace("</head>", "<link rel='stylesheet' href='https://dom.tutorialpaths.com/nav_static/bundle.css'></head>")
 
