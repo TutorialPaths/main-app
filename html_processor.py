@@ -56,13 +56,13 @@ def process(html, variables):
 
                                     nav = urlopen("https://dom.tutorialpaths.com/nav/_index.html").read().decode()
 
-                                    html.replace("</head>", "<link rel='stylesheet' href='https://dom.tutorialpaths.com/nav/bundle.css'></head>")
+                                    html = html.replace("</head>", "<link rel='stylesheet' href='https://dom.tutorialpaths.com/nav/bundle.css'></head>")
 
                                 elif childlocation == 'auto:nav_static':
 
                                     nav = urlopen("https://dom.tutorialpaths.com/nav_static/_index.html").read().decode()
 
-                                    html.replace("</head>", "<link rel='stylesheet' href='https://dom.tutorialpaths.com/nav_static/bundle.css'></head>")
+                                    html = html.replace("</head>", "<link rel='stylesheet' href='https://dom.tutorialpaths.com/nav_static/bundle.css'></head>")
 
                                 startcontent = html.index('<!--$[_CONTENT]-->')
                                 endcontent = html.index('<!--[_CONTENT]$-->')
