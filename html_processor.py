@@ -75,6 +75,10 @@ def process(html, variables):
 
                                 html = html.replace("@nav " + childlocation + " auto,", "")
 
+                                oper = "dark" if variables["dark_theme"] == 1 else "light"
+
+                                html = html.replace("<![end def]$-->", "<![end def]$--><link rel='stylesheet' href='https://dom.tutorialpaths.com/gl/" + oper + "/bundle.css'>")
+
                                 return process(html, variables)
 
                             elif childtype == 'markedHTML':
