@@ -89,9 +89,8 @@ def tutorialview(tutorial):
 
     processed = html_processor.process(html, {
         "support-pages": '[]',
-        "user": bool(request.cookies.get('sr:id')),
-        "dark_theme": bool(request.cookies.get('dark') == "1")
-    })
+        "user": bool(request.cookies.get('sr:id'))
+    }).replace("<html", "<html " + request.cookies.get("theme"))
 
     return processed
 
@@ -107,9 +106,8 @@ def home():
 
     processed = html_processor.process(html, {
         "support-pages": '[]',
-        "user": bool(request.cookies.get('sr:id')),
-        "dark_theme": bool(request.cookies.get('dark') == "1")
-    })
+        "user": bool(request.cookies.get('sr:id'))
+    }).replace("<html", "<html " + request.cookies.get("theme"))
 
     return processed
 
@@ -135,9 +133,8 @@ def taginf(tag):
 
     processed = html_processor.process(html, {
         "support-pages": '[]',
-        "user": bool(request.cookies.get('sr:id')),
-        "dark_theme": bool(request.cookies.get('dark') == "1")
-    })
+        "user": bool(request.cookies.get('sr:id'))
+    }).replace("<html", "<html " + request.cookies.get("theme"))
 
     return processed
 
@@ -157,9 +154,8 @@ def staticpage(page):
             return html_processor.process(html, {
                 "support-pages": '[]',
                 "user": bool(request.cookies.get('sr:id')),
-                "markdown": md,
-                "dark_theme": bool(request.cookies.get('dark') == "1")
-            })
+                "markdown": md
+            }).replace("<html", "<html " + request.cookies.get("theme"))
 
     abort(404)
 

@@ -75,10 +75,6 @@ def process(html, variables):
 
                                 html = html.replace("@nav " + childlocation + " auto,", "")
 
-                                oper = "dark" if variables["dark_theme"] == 1 else "light"
-
-                                html = html.replace("<html>", "<html " + oper + ">")
-
                                 return process(html, variables)
 
                             elif childtype == 'markedHTML':
