@@ -77,7 +77,7 @@ def process(html, variables):
 
                                 oper = "dark" if variables["dark_theme"] == 1 else "light"
 
-                                html = html.replace("<![end def]$-->", "<![end def]$--><link rel='stylesheet' href='https://dom.tutorialpaths.com/gl/" + oper + "/bundle.css'>")
+                                html = html.replace("<html>", "<html " + oper + ">")
 
                                 return process(html, variables)
 
